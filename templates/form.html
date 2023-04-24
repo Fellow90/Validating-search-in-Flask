@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fruit Search</title>
+  </head>
+  <body>
+    <h1>Fruit Search</h1>
+    <form method="POST" action="/">
+      <label for="fruit">Enter a fruit:</label>
+      <input type="text" id="fruit" name="fruit" list="fruits">
+      <datalist id="fruits">
+        {% for fruit in fruits %}
+        <option value="{{ fruit }}">
+        {% endfor %}
+      </datalist>
+      <button type="submit">Search</button>
+    </form>
+    {% if message %}
+    <p>{{ message }}</p>
+    {% endif %}
+  </body>
+</html>
